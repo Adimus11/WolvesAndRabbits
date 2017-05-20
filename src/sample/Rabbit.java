@@ -1,3 +1,6 @@
+package sample;
+
+import javafx.scene.image.Image;
 import javafx.util.Pair;
 
 /**
@@ -5,9 +8,15 @@ import javafx.util.Pair;
  */
 public class Rabbit extends Thread {
     private int posX, posY;
+    public Image Rabbit;
 
     public Rabbit(){
         //TODO: Implement constructor
+    }
+
+    @Override
+    public void run(){
+
     }
 
     public Pair getPosition(){

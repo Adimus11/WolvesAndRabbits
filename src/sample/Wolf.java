@@ -1,3 +1,5 @@
+package sample;
+
 import javafx.util.Pair;
 import javafx.scene.image.Image;
 
@@ -6,10 +8,15 @@ import javafx.scene.image.Image;
  */
 public class Wolf extends Thread {
     private int posX, posY;
-    private Image wolfImage;
+    public Image wolfImage;
 
     public Wolf(){
         //TODO: Implement constructor
+    }
+
+    @Override
+    public void run(){
+
     }
 
     public void findNearestRabbit(){
