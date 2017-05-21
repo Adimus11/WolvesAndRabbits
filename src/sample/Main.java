@@ -33,14 +33,27 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        sizeX = 50;
-        sizeY = 30;
-        rabbitNumber = 50;
-        time = 100;
 
         ParametersPopUp popUp = new ParametersPopUp();
 
         popUp.display();
+
+        try{
+            sizeX = Integer.parseInt(popUp.parameters.get(0));
+            sizeY = Integer.parseInt(popUp.parameters.get(1));
+            rabbitNumber = Integer.parseInt(popUp.parameters.get(2));
+            time = Integer.parseInt(popUp.parameters.get(3));
+
+            if(time < 100 || sizeX < 1 || sizeY < 1 || rabbitNumber > ((sizeY * sizeY) / 2)){
+                InfoPopUp.display("Podano złe argument", "Program nie może zostać wykonany poprzez błąd w podanych argumentach.");
+            }
+        }
+        catch(NumberFormatException e){
+            InfoPopUp.display("Podano złe argument", "Program nie może zostać wykonany poprzez błąd w podanych argumentach.");;
+        }
+        catch(IndexOutOfBoundsException e){
+            InfoPopUp.display("Podano złe argument", "Program nie może zostać wykonany poprzez błąd w podanych argumentach.");
+        }
 
         rabbitImage = new Image(getClass().getResource("assets/rabbit.png").toString());
 
@@ -126,20 +139,8 @@ public class Main extends Application {
         }
     }
 
-
     public void endProgram(){
-        //showExitMessage();
-
         System.exit(0);
-    }
-
-    public void showExitMessage(){
-        Alert programFinished = new Alert(Alert.AlertType.INFORMATION);
-        programFinished.setTitle("Program zakończy działanie");
-        programFinished.setContentText("Już nie ma żadnych królików na scenia, czas zakończyć działanie");
-        programFinished.setHeaderText(null);
-
-        programFinished.showAndWait();
     }
 
     public static void main(String[] args) {

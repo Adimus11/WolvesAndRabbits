@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -19,12 +21,13 @@ import java.util.ArrayList;
  */
 public class ParametersPopUp {
 
-    ArrayList<String> parameters;
+    public ArrayList<String> parameters;
 
 
-    public static void display()
+    public void display()
     {
         Stage popupwindow=new Stage();
+        parameters = new ArrayList<String>();
 
         popupwindow.initModality(Modality.APPLICATION_MODAL);
         popupwindow.setTitle("Parametry programu");
@@ -32,10 +35,9 @@ public class ParametersPopUp {
         Label heightLabel = new Label("Podaj liczbę pól w osi X:");
         Label widthLabel = new Label("Podaj liczbę pól w osi Y:");
         Label rabbitsLabel = new Label("Podaj liczbę królików:");
-        Label peroidLabel = new Label("Podaj okres(k):");
+        Label peroidLabel = new Label("Podaj okres(k > 99):");
 
         Button submit = new Button("Zatwierdź!");
-        submit.setOnAction(e -> popupwindow.close());
 
         TextField paramX = new TextField();
         TextField paramY = new TextField();
@@ -67,7 +69,17 @@ public class ParametersPopUp {
         GridPane.setConstraints(submit, 0, 4);
         grid.getChildren().add(submit);
 
+        submit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                parameters.add(paramX.getCharacters().toString());
+                parameters.add(paramY.getCharacters().toString());
+                parameters.add(paramRabbit.getCharacters().toString());
+                parameters.add(paramPeroid.getCharacters().toString());
 
+                popupwindow.close();
+            }
+        });
 
         Scene scene1= new Scene(grid, 350, 180);
 
