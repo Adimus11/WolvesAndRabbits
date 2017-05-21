@@ -59,7 +59,6 @@ public class Rabbit extends Thread {
     public void run(){
         while(alive) {
             makeMove();
-            //mainWindowReference.drawOnCanvas();
             try {
                 sleep(breakTime);
             } catch (InterruptedException e) {
