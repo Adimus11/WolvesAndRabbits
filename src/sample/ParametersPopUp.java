@@ -17,13 +17,19 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 /**
- * Created by Adimus on 21.05.2017.
+ * Class which construc pop-up windows asking for programm parameters.
+ * @author Michał Treter
  */
 public class ParametersPopUp {
 
+    /**
+     * ArrayList of parameters in string.
+     */
     public ArrayList<String> parameters;
 
-
+    /**
+     * Method which constructs and displays pop-up window.
+     */
     public void display()
     {
         Stage popupwindow=new Stage();

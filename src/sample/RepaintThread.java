@@ -1,12 +1,17 @@
 package sample;
 
 /**
- * Created by Adimus on 21.05.2017.
+ * Class which repaints the canvas, extends Thread
+ * @author Michał Treter
  */
 public class RepaintThread extends Thread {
 
     private Main mainWindowReference;
 
+    /**
+     * Constructor of the class
+     * @param mainReference Reference to main window.
+     */
     public RepaintThread(Main mainReference){
         this.mainWindowReference = mainReference;
     }

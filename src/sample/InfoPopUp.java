@@ -9,9 +9,16 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Created by Adimus on 21.05.2017.
+ * Class resposnsible for showing information pop-up window.
+ * @author Michał Treter
  */
 public class InfoPopUp {
+
+    /**
+     * Method which purpose is to display the pop-up window.
+     * @param title Title of the window.
+     * @param comment Information what this window means.
+     */
     public static void display(String title, String comment)
     {
         Stage popupwindow=new Stage();

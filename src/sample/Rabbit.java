@@ -7,14 +7,33 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by adimus on 5/16/17.
+ * Class of Rabbit which extends Thread.
+ * @author Michał Treter
  */
 public class Rabbit extends Thread {
-    public int posX, posY;
+
+    /**
+     * X position of rabbit in plane.
+     */
+    public int posX,
+
+    /**
+     * Y position of rabbit in plane.
+     */
+    posY;
     private int breakTime;
     private Main mainWindowReference;
+
+    /**
+     * Boolean variable which represents if thread is alive.
+     */
     public boolean alive = true;
 
+    /**
+     * COnstructor of Rabbit class
+     * @param mainReference Reference to main class.
+     * @param cycleTime Time for thread to sleep.
+     */
     public Rabbit(Main mainReference, int cycleTime){
         this.mainWindowReference = mainReference;
 

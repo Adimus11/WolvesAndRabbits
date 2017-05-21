@@ -16,17 +16,65 @@ import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Main class of the program which extends JavaFX Application
+ * @author Michał Treter
+ */
 public class Main extends Application {
 
+    /**
+     * Variable which contains map of the plane.
+     */
     public int[][] map;
+
+    /**
+     * Variable which contains random generator.
+     */
     public Random randomGenerator;
+
+    /**
+     * Variable which contains main canvas.
+     */
     public Canvas drawingCanvas;
+
+    /**
+     * Variable which contains main graphics context.
+     */
     public GraphicsContext gc;
+
+    /**
+     * Variable which contains ArrayList of all rabbits.
+     */
     public ArrayList<Rabbit> rabbits = new ArrayList<Rabbit>();
+
+    /**
+     * Variable which contains image of the grass.
+     */
     public Image grass;
+
+    /**
+     * Variable which contains wolf object.
+     */
     public Wolf wolf;
-    public int sizeX, sizeY;
+
+    /**
+     * Variable which contains X size of the plane.
+     */
+    public int sizeX,
+
+    /**
+     * Variable which contains Y size of the plane.
+     */
+    sizeY;
+
+    /**
+     * Variable which contains thread responsible for repainting screen.
+     */
     public RepaintThread rt;
+
+    /**
+     * Variable which contains "k" argument of the program.
+     */
     public double time;
     private int rabbitNumber;
     private Image rabbitImage;
@@ -102,6 +150,9 @@ public class Main extends Application {
 
     }
 
+    /**
+     * Method which painting on Canvas.
+     */
     public void drawOnCanvas(){
         for(int i = 0; i < sizeX; i++){
             for(int j = 0; j < sizeY; j++){
@@ -119,6 +170,9 @@ public class Main extends Application {
 
     }
 
+    /**
+     * Method which initializes map of the plane.
+     */
     public void initMap(){
         map = new int[sizeX + 2][sizeY + 2];
 
@@ -139,10 +193,17 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Method which exiting program.
+     */
     public void endProgram(){
         System.exit(0);
     }
 
+    /**
+     * Main method of whole application.
+     * @param args Default arguments.
+     */
     public static void main(String[] args) {
         launch(args);
     }

@@ -7,10 +7,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Created by adimus on 5/16/17.
+ * Class which represents Wolf, extends Thread.
+ * @author Michał Treter
  */
 public class Wolf extends Thread {
-    public int posX, posY;
+
+    /**
+     * X position of wolf on plane.
+     */
+    public int posX,
+
+    /**
+     * Y position of wolf on plane.
+     */
+    posY;
+
+    /**
+     * Image of the wolf.
+     */
     public Image wolfImage;
     private boolean isActive = true;
     private int breakTime;
@@ -19,6 +33,11 @@ public class Wolf extends Thread {
     private boolean rabbitsAvailable = true, rabbitEaten = false;
     private int waitCycle;
 
+    /**
+     * Constructor of the class.
+     * @param mainReference Reference to main class.
+     * @param cycleTime Sleep time for wolf thread.
+     */
     public Wolf(Main mainReference, int cycleTime){
         wolfImage = new Image(getClass().getResource("assets/wolf.png").toString());
         this.mainWindowReference = mainReference;
@@ -69,7 +88,7 @@ public class Wolf extends Thread {
         }
     }
 
-    public void findNearestRabbit(){
+    private void findNearestRabbit(){
         ArrayList<Rabbit> nearestRabbits = new ArrayList<Rabbit>();
         nearestRabbit = null;
 
