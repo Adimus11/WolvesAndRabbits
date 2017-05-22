@@ -41,7 +41,7 @@ public class ParametersPopUp {
         Label heightLabel = new Label("Podaj liczbę pól w osi X:");
         Label widthLabel = new Label("Podaj liczbę pól w osi Y:");
         Label rabbitsLabel = new Label("Podaj liczbę królików:");
-        Label peroidLabel = new Label("Podaj okres(k > 99):");
+        Label peroidLabel = new Label("Podaj okres(k > 49):");
 
         Button submit = new Button("Zatwierdź!");
 

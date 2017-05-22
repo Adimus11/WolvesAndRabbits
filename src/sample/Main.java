@@ -92,7 +92,7 @@ public class Main extends Application {
             rabbitNumber = Integer.parseInt(popUp.parameters.get(2));
             time = Integer.parseInt(popUp.parameters.get(3));
 
-            if(time < 100 || sizeX < 1 || sizeY < 1 || rabbitNumber > ((sizeY * sizeY) / 2)){
+            if(time < 50 || sizeX < 1 || sizeY < 1 || rabbitNumber > ((sizeX * sizeY)/2) || sizeX > 64 || sizeY > 34){
                 InfoPopUp.display("Podano złe argument", "Program nie może zostać wykonany poprzez błąd w podanych argumentach.");
             }
         }
@@ -141,7 +141,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
 
         primaryStage.setWidth(20 * sizeX);
-        primaryStage.setHeight(20 * (sizeY + 1));
+        primaryStage.setHeight(20 * (sizeY + 1) + 10);
         primaryStage.setResizable(false);
 
         primaryStage.setOnCloseRequest(e -> System.exit(0));
